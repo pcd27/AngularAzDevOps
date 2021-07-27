@@ -35,8 +35,8 @@ steps:
     workingDir: '$(clientApp)'
     customCommand: 'run build'
 
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'Build .Net Solution'
+# - script: dotnet build --configuration $(buildConfiguration)
+#   displayName: 'Build .Net Solution'
 
 - task: VSBuild@1
   inputs:
