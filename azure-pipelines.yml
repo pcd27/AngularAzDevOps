@@ -11,6 +11,7 @@ pool:
 
 variables:
   solution: 'AngularAzDevOps.sln'
+  clientApp: 'AngularAzDevOps/ClientApp'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Debug'
 
@@ -25,13 +26,13 @@ steps:
   displayName: 'Restore Angular Dependencies'
   inputs:
     command: 'install'
-    workingDir: 'AngularAzDevOps/ClientApp'
+    workingDir: '@(clientApp)'
 
 - task: Npm@1
   displayName: 'Build Angular'
   inputs:
     command: 'custom'
-    workingDir: '$(solution)/ClientApp'
+    workingDir: '@(clientApp)'
     customCommand: 'run build'
 
 - script: dotnet build --configuration $(buildConfiguration)
