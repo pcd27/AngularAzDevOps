@@ -26,13 +26,13 @@ steps:
   displayName: 'Restore Angular Dependencies'
   inputs:
     command: 'install'
-    workingDir: '@(clientApp)'
+    workingDir: '$(clientApp)'
 
 - task: Npm@1
   displayName: 'Build Angular'
   inputs:
     command: 'custom'
-    workingDir: '@(clientApp)'
+    workingDir: '$(clientApp)'
     customCommand: 'run build'
 
 - script: dotnet build --configuration $(buildConfiguration)
