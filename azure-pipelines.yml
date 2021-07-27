@@ -21,9 +21,6 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'Build .Net Solution'
-
 - task: Npm@1
   displayName: 'Restore Angular Dependencies'
   inputs:
@@ -36,6 +33,9 @@ steps:
     command: 'custom'
     workingDir: '$(solution)/ClientApp'
     customCommand: 'run build'
+
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'Build .Net Solution'
 
 - task: VSBuild@1
   inputs:
