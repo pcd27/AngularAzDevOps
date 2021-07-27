@@ -25,7 +25,7 @@ steps:
   displayName: 'Restore Angular Dependencies'
   inputs:
     command: 'install'
-    workingDir: '$(solution)/ClientApp'
+    workingDir: 'AngularAzDevOps/ClientApp'
 
 - task: Npm@1
   displayName: 'Build Angular'
