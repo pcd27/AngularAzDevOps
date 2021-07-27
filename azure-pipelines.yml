@@ -10,9 +10,9 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '$(solution)'
-  buildPlatform: '$(buildPlatform)'
-  buildConfiguration: '$(buildConfiguration)'
+  solution: 'AngularAzDevOps.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Debug'
 
 steps:
 - task: NuGetToolInstaller@1
